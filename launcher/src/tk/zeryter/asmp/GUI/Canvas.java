@@ -4,12 +4,18 @@ import java.awt.*;
 
 public class Canvas extends java.awt.Canvas {
 
+
     public void paint(Graphics g){
+
         System.out.println("paint");
 
-        clear(g);
+        clear(g);  //clears the canvas
+
+        //Draw stuff on canvas
 
         g.drawLine(0,0,getWidth(),getHeight());
+
+        //Finish draw
 
     }
 

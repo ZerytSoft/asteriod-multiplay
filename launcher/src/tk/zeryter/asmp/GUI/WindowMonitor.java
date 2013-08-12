@@ -8,6 +8,9 @@ import java.awt.Window;
 
 public class WindowMonitor extends WindowAdapter implements WindowListener {
 
+    //This checks to see if the window has been asked to close.
+    //If the window is being asked to close it ends the program.
+
     public void windowClosing(WindowEvent e) {
         Window w = e.getWindow();
         w.setVisible(false);

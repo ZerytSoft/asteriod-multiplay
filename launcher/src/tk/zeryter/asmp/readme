@@ -1,0 +1,13 @@
+Brief explanation of what each of the classes do.
+
+LauncherMain
+    The main class, this starts everything else
+
+Canvas
+    This is where you can draw things.. eg. g.drawString();
+
+Window
+    This is where elements like buttons, canvases and textboxes are added
+
+WindowMonitor
+    Checks to see if the window is open
