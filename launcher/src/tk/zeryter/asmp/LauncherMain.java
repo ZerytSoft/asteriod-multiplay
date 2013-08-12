@@ -5,7 +5,9 @@
 package tk.zeryter.asmp;
 
 public class LauncherMain {
-    //comment lels
+
+
+    //The main method
     public static void main(String[] args){
 
     }
