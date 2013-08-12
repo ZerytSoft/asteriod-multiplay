@@ -1,19 +1,29 @@
 package tk.zeryter.asmp.GUI;
 
+import tk.zeryter.asmp.LauncherMain;
+
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.*;
+import java.io.IOException;
+import java.net.URL;
 
 public class Canvas extends java.awt.Canvas {
 
+    Image test;
+
     public void paint(Graphics g){
 
+        URL url = LauncherMain.class.getResource("/tk/zeryter/asmp/Minecraft-Icon.png");
+
+        try {
+            test = ImageIO.read(url);
+        } catch (IOException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+
         g.drawLine(0,0,getWidth(),getHeight());
-
-    }
-
-    public void clear(Graphics g){
-
-        g.clearRect(0,0,getWidth(),getHeight());
-
+        g.drawImage(test,0,0,this);
     }
 
 }
