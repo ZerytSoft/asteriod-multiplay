@@ -3,12 +3,14 @@ package tk.zeryter.asmp.GUI;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.URL;
 
 import tk.zeryter.asmp.LauncherMain;
 
-public class Window implements Runnable{
+public class Window implements Runnable, ActionListener{
 
     Frame window;
     Container c = new Container();
@@ -19,14 +21,17 @@ public class Window implements Runnable{
     Button exampleButton = new Button("example");
 
     public void run() {
-        URL url = LauncherMain.class.getResource("/assets/icon.png");
 
+        //This sets up the image for use as the icon
+        URL url = LauncherMain.class.getResource("/assets/icon.png");
         try {
             icon = ImageIO.read(url);
         } catch (IOException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
         }
 
+
+        //This starts the widow (frame)
         window = new JFrame("Place Holder Text");
         window.setSize(700,500);
         window.setVisible(true);
@@ -34,23 +39,31 @@ public class Window implements Runnable{
         window.setResizable(false);
         window.setIconImage(icon);
 
+        //Container for holding elements
+        c.setBounds(0,0,window.getWidth(),window.getHeight());
+        window.add(c);
+
+        //Put objects inside the container, which is in the frame
         objects();
 
     }
 
     public void objects(){
 
-        c.setBounds(0,0,window.getWidth(),window.getHeight());
-        window.add(c);
+
 
         //adds and sets a buttons bounds inside the cointainer c
         exampleButton.setBounds(c.getWidth()/2 - 40,c.getHeight()/2 - 20,80,20);
         exampleButton.setBackground(Color.BLACK);
-        c.add(exampleButton);
+        exampleButton.addActionListener(this);  //Action listener
+        c.add(exampleButton);  //Add to container c
 
         //add a canvas that can be drawn on with graphics
         canvas.setBounds(0,0,c.getWidth(),c.getHeight());
-        c.add(canvas);
+        c.add(canvas); //Add to container c
     }
 
+    public void actionPerformed(ActionEvent e) {
+        System.out.println("Someone did an action");
+    }
 }

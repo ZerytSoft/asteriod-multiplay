@@ -22,8 +22,8 @@ public class Canvas extends java.awt.Canvas {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
 
-        g.drawLine(0,0,getWidth(),getHeight());
-        g.drawImage(test,0,0,this);
+        g.drawLine(0,0,getWidth(),getHeight()); //Regular old drawline
+        g.drawImage(test,0,0,this);  //Image stuff .... kinda tricky
     }
 
 }
