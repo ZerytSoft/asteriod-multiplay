@@ -4,7 +4,6 @@ import tk.zeryter.asmp.LauncherMain;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.image.*;
 import java.io.IOException;
 import java.net.URL;
 
@@ -14,7 +13,7 @@ public class Canvas extends java.awt.Canvas {
 
     public void paint(Graphics g){
 
-        URL url = LauncherMain.class.getResource("/tk/zeryter/asmp/Minecraft-Icon.png");
+        URL url = LauncherMain.class.getResource("/assets/Minecraft-Icon.png");
 
         try {
             test = ImageIO.read(url);
