@@ -59,7 +59,7 @@ public class Window implements Runnable, ActionListener{
         c.add(exampleButton);  //Add to container c
 
         //add a canvas that can be drawn on with graphics
-        canvas.setBounds(0,0,c.getWidth(),c.getHeight());
+        canvas.setBounds(0,0,c.getWidth(),c.getHeight() - 20);
         c.add(canvas); //Add to container c
     }
 
