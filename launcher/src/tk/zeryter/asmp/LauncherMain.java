@@ -8,7 +8,6 @@ import tk.zeryter.asmp.GUI.Window;
 
 public class LauncherMain {
 
-
     //The main method (starts when the class is run) from this other classes are called
     public static void main(String[] args){
 
