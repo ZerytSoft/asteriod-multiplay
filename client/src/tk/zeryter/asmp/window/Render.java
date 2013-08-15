@@ -47,17 +47,17 @@ public class Render implements Runnable {
 
             //Draw to the render space
 
-            s.rectangle(350, 250, 200 + size, 200 + size,rotation);
+            s.rectangle(350, 250, 20 + size, 20 + size,rotation,0,1,0);
 
             //s.triangle(350,250,5,10,5,Math.PI/4);
 
             Display.update();
 
-                //if (size >= 400 | size <= 0) sizeAdd = sizeAdd * -1;
+                if (size >= 400 | size <= 0) sizeAdd = sizeAdd * -1;
 
-                //size = size + sizeAdd;
+                size = size + sizeAdd;
 
-            rotation = rotation + Math.PI/32;
+            rotation = rotation + Math.PI/320;
 
             //System.out.println("size: " + size);
 
