@@ -50,14 +50,14 @@ public class Shapes {
 
         System.out.println("x1: " + (int)(x + (hyp)*Math.cos(angle1 + rotation)) + " y1: " + (int)(y + (hyp)*Math.sin(angle1 + rotation)));
         System.out.println("x2: " + (int)(x + (hyp)*Math.cos(angle2 + rotation)) + " y2: " + (int)(y - (hyp)*Math.sin(angle2 + rotation)));
-        System.out.println("x3: " + (int)(x - (hyp)*Math.cos(angle3 + rotation)) + " y3: " + (int)(y - (hyp)*Math.sin(angle3 + rotation)));
-        System.out.println("x4: " + (int)(x - (hyp)*Math.cos(angle4 + rotation)) + " y4: " + (int)(y + (hyp)*Math.sin(angle4 + rotation)));
+        System.out.println("x3: " + (int)(x - (hyp)*Math.cos(angle3 + rotation)) + " y3: " + (int)(y + (hyp)*Math.sin(angle3 + rotation)));
+        System.out.println("x4: " + (int)(x - (hyp)*Math.cos(angle4 + rotation)) + " y4: " + (int)(y - (hyp)*Math.sin(angle4 + rotation)));
 
         GL11.glBegin(GL11.GL_QUADS);
-            GL11.glVertex2i((int)(x + ((hyp)*Math.cos(angle1 + rotation))),(int)(y + ((hyp)*Math.sin(angle1 - rotation))));
-            GL11.glVertex2i((int)(x + ((hyp)*Math.cos(angle2 + rotation))),(int)(y - ((hyp)*Math.sin(angle2 - rotation))));
-            GL11.glVertex2i((int)(x - ((hyp)*Math.cos(angle3 + rotation))),(int)(y + ((hyp)*Math.sin(angle3 - rotation))));
-            GL11.glVertex2i((int)(x - ((hyp)*Math.cos(angle4 + rotation))),(int)(y - ((hyp)*Math.sin(angle4 - rotation))));
+            GL11.glVertex2i((int)(x + ((hyp)*Math.cos(angle1 + rotation))),(int)(y + ((hyp)*Math.sin(angle1 + rotation))));
+            GL11.glVertex2i((int)(x + ((hyp)*Math.cos(angle1 - rotation))),(int)(y - ((hyp)*Math.sin(angle1 - rotation))));
+            GL11.glVertex2i((int)(x - ((hyp)*Math.cos(angle1 - rotation))),(int)(y + ((hyp)*Math.sin(angle1 - rotation))));
+            GL11.glVertex2i((int)(x - ((hyp)*Math.cos(angle1 + rotation))),(int)(y - ((hyp)*Math.sin(angle1 + rotation))));
         GL11.glEnd();
 
     }
