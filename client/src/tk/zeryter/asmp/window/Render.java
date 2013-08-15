@@ -11,6 +11,8 @@ public class Render implements Runnable {
 
     int size = 10;
 
+    double rotation = 0;
+
     public void run() {
 
         Shapes s = new Shapes();
@@ -45,25 +47,17 @@ public class Render implements Runnable {
 
             //Draw to the render space
 
-            s.rectangle(350, 300, 20 + size, 20 + size,1,0,0,80);
-            s.rectangle(350, 200, 20 + size, 20 + size,0,1,0,80);
-            s.rectangle(350, 250, 20 + size, 20 + size,0,0,1,80);
-
-            s.rectangle(500,300,20 + size,20 + size,0,0,1,80);
-            s.rectangle(500,200,20 + size,20 + size,1,0,0,80);
-            s.rectangle(500,250,20 + size,20 + size,0,1,0,80);
-
-            s.rectangle(200,300,20 + size,20 + size,0,1,0,80);
-            s.rectangle(200,200,20 + size,20 + size,0,0,1,80);
-            s.rectangle(200,250,20 + size,20 + size,1,0,0,80);
+            s.rectangle(350, 250, 200 + size, 200 + size,rotation);
 
             //s.triangle(350,250,5,10,5,Math.PI/4);
 
             Display.update();
 
-                if (size >= 400 | size <= 0) sizeAdd = sizeAdd * -1;
+                //if (size >= 400 | size <= 0) sizeAdd = sizeAdd * -1;
 
-                size = size + sizeAdd;
+                //size = size + sizeAdd;
+
+            rotation = rotation + Math.PI/32;
 
             //System.out.println("size: " + size);
 
