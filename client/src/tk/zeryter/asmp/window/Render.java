@@ -3,7 +3,8 @@ package tk.zeryter.asmp.window;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
-import org.lwjgl.opengl.GL11;
+
+import static org.lwjgl.opengl.GL11.*;
 
 public class Render implements Runnable {
 
@@ -28,45 +29,37 @@ public class Render implements Runnable {
 
         }
 
-        GL11.glMatrixMode(GL11.GL_PROJECTION);
-        GL11.glLoadIdentity();
-        GL11.glOrtho(0, Display.getWidth(), 0, Display.getHeight(), 1, -1);    //This sets up the render space for open GL pixW is width pixH is Height
-        GL11.glMatrixMode(GL11.GL_MODELVIEW);
+        glMatrixMode(GL_PROJECTION);
+        glLoadIdentity();
+        glOrtho(0, Display.getWidth(), 0, Display.getHeight(), 1, -1);    //This sets up the render space for open GL pixW is width pixH is Height
+        glMatrixMode(GL_MODELVIEW);
 
         //Variables for rendering
-
-        int x = 0,y = 0;
-        int addX = 5, addY = 5;
 
         while (!Display.isCloseRequested()) {
 
             //Clear the render space
-            GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);      //Clears the render space
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);      //Clears the render space
 
             //Draw to the render space
 
-            s.rectangle(540 + x,360 + y,60,60,0,0,1,0);
+            glColor3d(0.0, 0.0, 0.0);
 
-            //Finish drawing
-            Display.update();
-
-            x = x + addX;
-            y = y + addY;
-
-            if(x <= -540 + (30) | x >= 540 - (30)) {
-                addX = addX * -1;
-            }
-
-            if(y <= -360 + (30) | y >= 360 - (30)) {
-                addY = addY * -1;
-            }
+            glBegin(GL_QUADS);
+            glVertex2i(0, 0);
+            glVertex2i(0, Display.getHeight());
+            glVertex2i(Display.getWidth(), Display.getHeight());
+            glVertex2i(Display.getWidth(), 0);
+            glEnd();
 
             try {
-                Thread.sleep(16);
+                Thread.sleep(8);
             } catch (InterruptedException e) {
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             }
 
+            //Finish drawing
+            Display.update();
 
         }
     }

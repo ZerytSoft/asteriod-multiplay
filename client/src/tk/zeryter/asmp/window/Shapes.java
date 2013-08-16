@@ -115,13 +115,22 @@ public class Shapes {
 
     }
 
-    public void polygon(short sides, int x, int y, int width, int height, double rotation) {
+    public void polygon(byte sides, int x, int y, int width, int height, double rotation) {
 
         int a = (height / 2), b = (width / 2);
 
         double hyp = Math.sqrt((a * a) + (b * b));
 
         double angle[] = new double[sides];
+
+        if ((sides % 2) == 0) {
+            System.out.println("Even");
+        }
+        else {
+
+
+
+        }
 
         for (short i = 0; i < sides; i++) {
 
