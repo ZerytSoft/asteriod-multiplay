@@ -41,9 +41,13 @@ public class Render implements Runnable{
             Display.update();
 
             try {
+
                 Thread.sleep(2);
+
             } catch (InterruptedException e) {
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+
+                e.printStackTrace();
+
             }
         }
     }
