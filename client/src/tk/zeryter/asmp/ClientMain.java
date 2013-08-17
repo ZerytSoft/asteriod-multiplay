@@ -1,3 +1,5 @@
+//Owen Holloway
+//ZerytSoft
 package tk.zeryter.asmp;
 
 import tk.zeryter.asmp.window.Render;

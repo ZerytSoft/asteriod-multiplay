@@ -1,3 +1,5 @@
+//Owen Holloway
+//ZerytSoft
 package tk.zeryter.asmp.GUI;
 
 import javax.imageio.ImageIO;
