@@ -45,14 +45,7 @@ public class Render implements Runnable {
 
             //Draw to the render space
 
-            glColor3d(0.0, 0.0, 0.0);
 
-            glBegin(GL_QUADS);
-            glVertex2i(0, 0);
-            glVertex2i(0, Display.getHeight());
-            glVertex2i(Display.getWidth(), Display.getHeight());
-            glVertex2i(Display.getWidth(), 0);
-            glEnd();
 
             try {
                 Thread.sleep(8);
